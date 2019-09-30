@@ -26,7 +26,6 @@ namespace _01WebApi
         {
             services.AddControllers()
                 .AddXmlSerializerFormatters();
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,12 +3,25 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace>04Calculadora</RootNamespace>
+    <RootNamespace>WPF.Calculadora</RootNamespace>
     <UseWPF>true</UseWPF>
+    <AssemblyName>WPF.Calculadora</AssemblyName>
+    <UserSecretsId>d23f62f0-6f69-41a7-b2df-78f0c98198c2</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <None Remove="App.xaml.cs~RFeb496.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0" />
+    <PackageReference Include="MvvmLight" Version="5.4.1.1" />
   </ItemGroup>
 
 </Project>

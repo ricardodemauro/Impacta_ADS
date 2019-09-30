@@ -1,9 +1,15 @@
-﻿<Application x:Class="04Calculadora.App"
+﻿<Application x:Class="WPF.Calculadora.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:04Calculadora"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:WPF.Calculadora"
+             StartupUri="MainWindow.xaml"
+             xmlns:vm="clr-namespace:WPF.Calculadora"
+             xmlns:converters="clr-namespace:WPF.Calculadora.Converters">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator" />
+            <converters:DecimalToStringConverter x:Key="DecimalToStringConverter" />
+            <converters:StringToDecimalConverter x:Key="StringToDecimalConverter" />
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
