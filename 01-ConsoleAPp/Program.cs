@@ -8,12 +8,6 @@ namespace _01_ConsoleAPp
     {
         static readonly Calculadora _calculadora = new Calculadora();
 
-        static void ConfigureServices()
-        {
-            var serviceCollection = new ServiceCollection();
-            serviceCollection.AddLogging(cfg => cfg.AddConsole());
-        }
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World - Calculadora");

@@ -17,10 +17,9 @@ namespace WPF.Calculadora.Commands
         {
             if (canExecuteFunction == null)
                 canExecuteFunction = (o) => true;
-            if (executeAction == null)
-                throw new ArgumentNullException(nameof(executeAction));
+            
+            ExecuteAction = executeAction ?? throw new ArgumentNullException(nameof(executeAction));
 
-            ExecuteAction = executeAction;
             CanExecuteFunction = canExecuteFunction;
         }
 
