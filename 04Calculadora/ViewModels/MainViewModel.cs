@@ -10,7 +10,11 @@ namespace WPF.Calculadora.ViewModels
         private bool _limpaResultado = false;
 
         private string _resultado;
-        public string Resultado { get { return _resultado; } set { SetProperty(ref _resultado, value); } }
+        public string Resultado 
+        { 
+            get { return _resultado; } 
+            set { SetProperty(ref _resultado, value); } 
+        }
 
         public ICommand PressionaNumeroCmd { get; set; }
 

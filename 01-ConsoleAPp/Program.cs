@@ -8,7 +8,7 @@ namespace _01_ConsoleAPp
     {
         static readonly Calculadora _calculadora = new Calculadora();
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World - Calculadora");
             DisplayInfo();
@@ -89,7 +89,7 @@ namespace _01_ConsoleAPp
         }
     }
 
-    class Calculadora
+    public class Calculadora
     {
         public Calculadora()
         {
@@ -100,9 +100,65 @@ namespace _01_ConsoleAPp
             return valor + valor2;
         }
 
-        public decimal Subtrair(decimal valor, decimal valor2)
+        protected virtual void SetupInicial()
+        {
+            //fazer alguma mágina
+        }
+
+        public virtual decimal Subtrair(decimal valor, decimal valor2)
         {
             return valor + valor2;
+        }
+    }
+
+
+    public abstract class Veiculo
+    {
+        readonly int _nivelAceleracao = 100;
+
+        const int _nivelAc3 = 300;
+
+        readonly ILogger _logger;
+
+        public Veiculo(ILogger logger)
+        {
+        }
+
+        public void Setup()
+        {
+            _logger.LogInformation("fazendo setup");
+            //fazer setup
+        }
+
+        private decimal _velocidade;
+
+        public decimal Velocidade
+        {
+            get { return _velocidade; }
+            set { _velocidade = value < 0 ? 0 : value; }
+        }
+
+        public abstract decimal Acelerar(decimal aceleracao);
+
+        protected virtual void SetVelocidadeMaxima(decimal _velocidade)
+        {
+            //Velocidade = velocidade;
+            this._velocidade = _velocidade;
+        }
+    }
+
+    class FordKa : Veiculo
+    {
+        public override decimal Acelerar(decimal aceleracao)
+        {
+            Velocidade += aceleracao;
+            return Velocidade;
+        }
+
+        protected override void SetVelocidadeMaxima(decimal _velocidade)
+        {
+            //base.SetVelocidadeMaxima(_velocidade * 2);
+            Velocidade = _velocidade * 2;
         }
     }
 }

@@ -17,9 +17,12 @@ namespace WPF.Calculadora
     /// </summary>
     public partial class App : Application
     {
+        //inversao de controle
         internal static IServiceProvider ServiceProvider { get; private set; }
 
+
         internal static IConfiguration Configuration { get; private set; }
+
 
         public App()
         {
